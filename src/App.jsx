@@ -308,7 +308,7 @@ imageLoaderRequest.send();
         />
         <div className="showdown-player--besthand--container">
           <h5 className="showdown-player--besthand--heading">
-            Best Hand
+            Хамгийн сайн нь
           </h5>
           <div className='showdown-player--besthand--cards' style={{alignItems: 'center'}}>
             {
@@ -362,7 +362,7 @@ imageLoaderRequest.send();
           {renderActionButtonText(highBet, betInputValue, players[activePlayerIndex])}
         </button>
         <button className='fold-button' onClick={() => this.handleFold()}>
-          Fold
+          Болих
         </button>
       </React.Fragment>
       )
@@ -372,18 +372,18 @@ imageLoaderRequest.send();
     return(
       <div className='showdown-container--wrapper'>
         <h5 className="showdown-container--title">
-          Round Complete!
+          Тоглолт дууслаа!
         </h5>
         <div className="showdown-container--messages">
           { renderShowdownMessages(this.state.showDownMessages)}
         </div>
         <h5 className="showdown-container--community-card-label">
-          Community Cards
+          Нийтлэг хөзрүүд
         </h5>
         <div className='showdown-container--community-cards'>
           { this.renderCommunityCards(true) }
         </div>
-        <button className="showdown--nextRound--button" onClick={() => this.handleNextRound()}> Next Round </button>
+        <button className="showdown--nextRound--button" onClick={() => this.handleNextRound()}> Дараагийн тоглолт </button>
           { this.renderBestHands() }
       </div>
     )
