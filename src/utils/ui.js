@@ -38,15 +38,15 @@ const renderUnicodeSuitSymbol = (suit) => {
 
 const renderActionButtonText = (highBet, betInputValue, activePlayer) => {
 	if ((highBet === 0) && (betInputValue === 0)) {
-		return 'Өнжлөө'
+		return 'Өнжих'
 	} else if ((highBet === betInputValue)) {
-		return 'Тоглолоо'
+		return 'Тоглох'
 	} else if ((highBet === 0) && (betInputValue > highBet)) {
 		return 'Бооцоо'
 	} else if ((betInputValue < highBet) || (betInputValue === activePlayer.chips + activePlayer.bet)) {
 		return 'Бүгдийг нь!'
 	} else if (betInputValue > highBet) {
-		return 'Өсгөлөө'
+		return 'Өсгөх'
 	} 
 }
 
