@@ -2,7 +2,7 @@ import React from 'react';
 
 import Handle from "../components/slider/Handle";
 import Track from "../components/slider/Track";
-import { sliderStyle, railStyle } from "../components/slider/styles";
+import { railStyle } from "../components/slider/styles";
 
 import { Slider, Rail, Handles, Tracks } from 'react-compound-slider'
 
@@ -131,7 +131,7 @@ const renderActionMenu = (highBet, players, activePlayerIndex, phase, changeSlid
 		(phase === 'betting1' || phase === 'betting2' || phase === 'betting3' || phase === 'betting4') ? (players[activePlayerIndex].robot) ? (<h4> {`Current Move: ${players[activePlayerIndex].name}`}</h4>) : (
 			<React.Fragment>
 			<Slider
-				rootStyle={sliderStyle}
+				rootStyle={{ position: 'relative', width: '100%' }}
 				domain={[min, max]}
 				values={[min]}
 				step={1}

@@ -129,7 +129,7 @@ imageLoaderRequest.addEventListener("progress", e => {
     console.log(e);
 });
 
-imageLoaderRequest.open("GET", "./assets/table-nobg-svg-01.svg");
+imageLoaderRequest.open("GET", "./assets/tablenew.png");
 imageLoaderRequest.send();
 
     this.setState(prevState => ({
@@ -394,23 +394,23 @@ imageLoaderRequest.send();
     return (
       <div className='poker-app--background'>
         <div className="poker-table--container">
-          <img className="poker-table--table-image" src={"./assets/table-nobg-svg-01.svg"} alt="Poker Table" />
+          <img className="poker-table--table-image" src={"./assets/tablenew.png"} alt="Poker Table" />
           { this.renderBoard() }
           <div className='community-card-container' >
             { this.renderCommunityCards() }
           </div>
           <div className='pot-container'>
-            <img style={{height: 55, width: 55}} src={'./assets/pot.svg'} alt="Pot Value"/>
+            <img style={{height: 30, width: 30}} src={'./assets/Dise_5.png'} alt="Pot Value"/>
             <h4> {`${this.state.pot}`} </h4>
           </div>
         </div>
         { (this.state.phase === 'showdown') && this.renderShowdown() } 
         <div className='game-action-bar' >
-          <div className='action-buttons'>
-              { this.renderActionButtons() }
-          </div>
           <div className='slider-boi'>
             { (!this.state.loading)  && renderActionMenu(highBet, players, activePlayerIndex, phase, this.handleBetInputChange)}
+          </div>
+          <div className='action-buttons'>
+              { this.renderActionButtons() }
           </div>
         </div>
       </div>

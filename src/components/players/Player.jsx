@@ -96,16 +96,19 @@ const Player = (props) => {
             src={avatarURL} 
             alt="Player Avatar" 
           />
-          <h5 className="player-info--name" style={{'fontSize': (name.length < 14) ? 12 : 10}}>
-            {`${name}`}
-          </h5>
-          <div className="player-info--stash--container">
-            <img className="player-info--stash--image" src={chipCountImageURL} alt="Player Stash"/>
-            <h5>{`${chips}`}</h5>
-          </div>
-          <div className="player-info--bet--container">
-            <img className="player-info--bet--image" src={playerBetImageURL} alt="Player Bet" />
-            <h5>{`Bet: ${bet}`}</h5>
+          <div className="player-info">
+            <h5 className="player-info--name" style={{'fontSize': (name.length < 14) ? 12 : 10}}>
+              {`${name}`}
+            </h5>
+            <div className="player-cred">
+              <div className="player-info--stash--container">
+                <img className="player-info--stash--image" src={chipCountImageURL} alt="Player Stash"/>
+                <h5>{`${chips}`}</h5>
+              </div>
+              <div className="player-info--bet--container">
+                <h5>{`Bet: ${bet}`}</h5>
+              </div>
+            </div>
           </div>
           { renderDealerChip() }
         </div>

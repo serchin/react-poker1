@@ -17,10 +17,10 @@ const Card = (props) => {
       key={`${suit} ${cardFace}`} 
       className={`playing-card cardIn ${(applyFoldedClassname ? ' folded' : '')}`} 
       style={{animationDelay: `${(applyFoldedClassname) ?  0 : animationDelay}ms`}}>
-      <h6
-        style={{color: `${(suit === 'Diamond' || suit === 'Heart') ? 'red' : 'black'}`}}>
-        {`${cardFace} ${renderUnicodeSuitSymbol(suit)}`}
-      </h6>
+      <div className='symbol' style={{color: `${(suit === 'Diamond' || suit === 'Heart') ? 'red' : 'black'}`}}>
+        {`${cardFace}`}
+        <h1>{`${renderUnicodeSuitSymbol(suit)}`}</h1>
+      </div>
     </div>
   )
 }
