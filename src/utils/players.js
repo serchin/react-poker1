@@ -1,38 +1,40 @@
-import uuid from 'uuid/v1';
+import { v4 as uuidv4 } from 'uuid';
 import { handlePhaseShift, reconcilePot, anteUpBlinds, determineBlindIndices } from './bet.js';
 import { dealMissingCommunityCards, showDown, generateDeckOfCards, shuffle, dealPrivateCards } from './cards.js';
 
 const axios = require('axios')
 // TODO Generate UUID to simulate User ID and really get a perf match on binding to players when determining winnings
 const generateTable = async () => {
-	const users = [{
-		id: uuid(),
-		name: 'Player 1',
-		avatarURL: '/assets/boy.svg',
-		cards: [],
-		showDownHand: {
-			hand: [],
-			descendingSortHand: [], 
-		},
-		chips: 20000,
-		roundStartChips: 20000,
-		roundEndChips: 20000,
-		currentRoundChipsInvested: 0,
-		bet: 0,
-		betReconciled: false,
-		folded: false,
-		allIn: false,
-		canRaise: true,
-		stackInvestment: 0,
-		robot: false
-	}];
+	const users = [
+		{
+			id: uuidv4(),
+			name: 'Player 1',
+			avatarURL: '/assets/boy.svg',
+			cards: [],
+			showDownHand: {
+				hand: [],
+				descendingSortHand: [], 
+			},
+			chips: 20000,
+			roundStartChips: 20000,
+			roundEndChips: 20000,
+			currentRoundChipsInvested: 0,
+			bet: 0,
+			betReconciled: false,
+			folded: false,
+			allIn: false,
+			canRaise: true,
+			stackInvestment: 0,
+			robot: false
+		}
+	];
 
 	const response = await axios.get(`https://randomuser.me/api/?results=4&nat=us,gb,fr`);
 	response.data.results
 		.map(user => {
 			const randomizedChips = Math.floor(Math.random() * (20000 - 18000)) + 18000;
 			return ({
-				id: uuid(),
+				id: uuidv4(),
 				name: `${user.name.first.charAt(0).toUpperCase()}${user.name.first.slice(1)} ${user.name.last.charAt(0).toUpperCase()}${user.name.last.slice(1)}`,
 				avatarURL: user.picture.large,
 				cards: [],
