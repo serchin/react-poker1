@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.screenSize {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60px;
+  margin: 10px;
+}
+
+.screenSize img {
+  filter: invert(100%);
+  width: 20px;
+}
+
+.screenSize p {
+  font-size: 12px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 65px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
